@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Project.Models.Employee>
+
+<h1>Employee List</h1>
+<table>
+    <thead>
+        <tr>
+            <th><center>ID</center></th>
+            <th><center>Name</center></th>
+            <th><center>Email</center></th>
+            <th><center>Phone</center></th>
+            <th><center>Update</center></th>
+            <th><center>Delete</center></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td><center>@employee.Id</center></td>
+                <td><center>@employee.Name</center></td>
+                <td><center>@employee.Email</center></td>
+                <td><center>@employee.Phone</center></td>
+                <td><a asp-action="Edit" asp-route-id="@employee.Id"><center>Edit</center></a></td>
+                <td><a asp-action="Delete" asp-route-id="@employee.Id"><center>Delete</center></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
