@@ -1,33 +1,46 @@
 ﻿@model Project.Models.Employee
 
-<h2>Edit Employee</h2>
+<h2 class="mb-4 text-center">Edit Employee</h2>
 
-<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
-    <div class="form-group">
-        <label asp-for="Id" class="control-label"></label>
-        <input asp-for="Id" class="form-control" readonly />
-    </div>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="card p-4" style="background-color: #008c90; color: #fff;">
 
-    <div class="form-group">
-        <label asp-for="Name" class="control-label"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
+            <div class="form-group mb-3">
+                <label asp-for="Id" class="form-label fw-bold">ID</label>
+                <input asp-for="Id" class="form-control" readonly />
+            </div>
 
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="form-label fw-bold">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
 
-    <div class="form-group">
-        <label asp-for="Phone" class="control-label"></label>
-        <input asp-for="Phone" class="form-control" />
-        <span asp-validation-for="Phone" class="text-danger"></span>
-    </div>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label fw-bold">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
 
-    <div class="mb-3">
-        <input type="submit" value="Update" class="btn btn-primary">
-        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            <div class="form-group mb-3">
+                <label for="Phone" class="form-label fw-bold">Phone</label>
+                <input asp-for="Phone" type="text" class="form-control" id="Phone" pattern="[0-9]+" title="Only Numbers Allowed" required />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="UserRole" class="form-label fw-bold">User Role</label>
+                <select asp-for="UserRole" class="form-control"
+                        asp-items="Html.GetEnumSelectList<UserRoleType>()">
+                </select>
+                <span asp-validation-for="UserRole" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-center mt-2">
+                <button type="submit" class="btn btn-primary btn-lg me-2">Update</button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg">Cancel</a>
+            </div>
+        </form>
     </div>
-</form>
+</div>

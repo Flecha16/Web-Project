@@ -22,13 +22,10 @@
   <ItemGroup>
     <None Remove="Views\Employees\" />
     <None Remove="Views\Login\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Employee\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="Properties\launchSettings 2.json">
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </Content>
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
