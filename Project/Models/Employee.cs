@@ -9,13 +9,11 @@ namespace Project.Models
 		public String Phone { get; set; }
         public UserRoleType UserRole { get; set; }
     }
-
-    public enum UserRoleType
-    {
-        Admin,
-        Manager,
-        Employee
-    }
-
+	public enum UserRoleType
+	{
+		Admin,
+		Manager,
+		Employee
+	}
 }
 

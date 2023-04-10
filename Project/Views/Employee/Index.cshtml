@@ -26,8 +26,8 @@
                     <td class="text-center">@employee.Email</td>
                     <td class="text-center">@employee.Phone</td>
                     <td class="text-center">@employee.UserRole</td>
-                    <td class="text-center"><a asp-action="Edit" asp-route-id="@employee.Id">Edit</a></td>
-                    <td class="text-center"><a asp-action="Delete" asp-route-id="@employee.Id">Delete</a></td>
+                    <td class="text-center"><a asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-sm btn-primary">Edit</a></td>
+                    <td class="text-center"><a asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-sm btn-danger">Delete</a></td>
                 </tr>
             }
         </tbody>
